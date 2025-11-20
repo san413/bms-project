@@ -62,6 +62,7 @@
             font-weight: bold;
             text-decoration: none;
         }
+        
     </style>
 </head>
 
@@ -89,3 +90,81 @@
 
 </body>
 </html>
+<!-- 4 BOX OPTIONS SECTION -->
+<style>
+.option-container {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.option-box {
+    width: 220px;
+    height: 140px;
+    background: #c60000;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    padding-top: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option-box:hover {
+    background: #ff0000;
+    transform: scale(1.05);
+}
+
+.option-box img {
+    width: 45px;
+    margin-bottom: 10px;
+}
+
+.option-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+</style>
+
+<div style="text-align:center; margin-top:40px;">
+    <h2>GIVE BLOOD, GIVE PLASMA, SHARE LIFE, SHARE OFTEN</h2>
+</div>
+
+<div class="option-container">
+
+    <!-- 1: BLOOD AVAILABILITY SEARCH -->
+    <a href="/search-blood">
+        <div class="option-box">
+            <img src="/static/home/box1.png" alt="Blood Availability" width="98" height="53">
+            <div class="option-title">BLOOD AVAILABILITY<br>SEARCH</div>
+        </div>
+    </a>
+
+    <!-- 2: BLOOD TYPES AND DETAILS -->
+    <a href="/blood-types">
+        <div class="option-box">
+            <img src="/static/home/box2.png" alt="Blood Types"width="98" height="53">
+            <div class="option-title">BLOOD TYPES AND<br>DETAILS</div>
+        </div>
+    </a>
+
+    <!-- 3: SEARCH FOR BLOOD DONOR -->
+    <a href="/donor-search">
+        <div class="option-box">
+            <img src="/static/home/box3.png" alt="Search Donor"width="98" height="53">
+            <div class="option-title">SEARCH FOR<br>BLOOD DONOR</div>
+        </div>
+    </a>
+
+    <!-- 4: REGISTER AS VOLUNTEER -->
+    <a href="/register-volunteer">
+        <div class="option-box">
+            <img src="/static/home/box4.png" alt="Volunteer"width="98" height="53">
+            <div class="option-title">REGISTER AS A<br>VOLUNTEER</div>
+        </div>
+    </a>
+
+</div>
+
