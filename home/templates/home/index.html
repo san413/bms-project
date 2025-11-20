@@ -88,6 +88,100 @@
         <a class="login-btn" href="#">LOGIN</a>
     </div>
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+        }
+
+        /* MAIN CONTAINER */
+        .header-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px 0;
+        }
+
+        /* LOGO */
+        .logo-img {
+            width: 130px;
+            height: 125px;
+            object-fit: contain;
+        }
+
+        /* CENTER TEXT AREA */
+        .center-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* BLOOD BANK */
+        .bloodbank-text {
+            width: 356px;
+            font-size: 48px;
+            font-weight: 700;
+            color: #E60000;
+            margin: 0;
+            line-height: 59px;   /* EXACT HEIGHT */
+        }
+
+        .bloodbank-text span {
+            color: black;
+        }
+
+        /* MANAGEMENT SYSTEM */
+        .management-text {
+            width: 345px;
+            font-size: 26px;
+            font-weight: 700;
+            color: black;
+            margin: -5px 0 0 0;
+            line-height: 35px;  /* EXACT HEIGHT */
+        }
+
+        /* ILLUSTRATION */
+        .illustration-img {
+            width: 280px;
+            height: 222px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-container">
+
+        <!-- LOGO -->
+        <img src="{% static 'home/logo1.png' %}" class="logo-img" alt="Logo">
+
+        <!-- TEXT (CENTER) -->
+        <div class="center-text">
+            <h1 class="bloodbank-text">BLOOD <span>BANK</span></h1>
+            <p class="management-text">MANAGEMENT SYSTEM</p>
+        </div>
+
+        <!-- ILLUSTRATION -->
+        <img src="{% static 'home/illustration.png' %}" class="illustration-img" alt="Illustration">
+
+    </div>
+
+</body>
+</html>
+
+
 </body>
 </html>
 <!-- 4 BOX OPTIONS SECTION -->
@@ -166,5 +260,5 @@
         </div>
     </a>
 
-</div>
-
+</body>
+</html>
