@@ -1,13 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System</title>
+
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background: white;
         }
 
+        /* NAVBAR */
         .navbar {
             display: flex;
             align-items: center;
@@ -16,44 +22,28 @@
             background: white;
             box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
         }
-
         .logo-area {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
-        .logo-area img {
-            height: 40px;
-        }
-
-        .logo-text {
-            line-height: 15px;
-        }
-
+        .logo-area img { height: 40px; }
         .logo-text .title {
             font-size: 18px;
             font-weight: 900;
             color: red;
         }
-
         .logo-text .sub {
             font-size: 10px;
             color: black;
         }
-
-        .menu {
-            display: flex;
-            gap: 35px;
-        }
-
+        .menu { display: flex; gap: 35px; }
         .menu a {
-            text-decoration: none;
             color: black;
             font-size: 14px;
             font-weight: bold;
+            text-decoration: none;
         }
-
         .login-btn {
             background: red;
             color: white;
@@ -62,16 +52,136 @@
             font-weight: bold;
             text-decoration: none;
         }
-        
+
+        /* HEADER */
+        .header-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px 0;
+        }
+        .logo-img {
+            width: 130px;
+            height: 125px;
+            object-fit: contain;
+        }
+        .center-text { display: flex; flex-direction: column; }
+        .bloodbank-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: #E60000;
+            margin: 0;
+        }
+        .bloodbank-text span { color: black; }
+        .management-text {
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: -5px;
+        }
+        .illustration-img {
+            width: 280px;
+            height: 222px;
+            object-fit: contain;
+        }
+
+        /* OPTIONS */
+        .option-container {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        .option-box {
+            width: 220px;
+            height: 140px;
+            background: #c60000;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .option-box:hover {
+            background: #ff0000;
+            transform: scale(1.05);
+        }
+        .option-box img {
+            width: 48px;
+            margin-bottom: 10px;
+        }
+        .option-title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* CAROUSEL */
+        .carousel-wrap {
+            max-width: 1100px;
+            margin: 25px auto;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #0092ff;
+            border-radius: 4px;
+        }
+        .carousel-slide {
+            display: none;
+            width: 100%;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.45);
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .prev-btn { left: 12px; }
+        .next-btn { right: 12px; }
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display:flex;
+            gap:8px;
+        }
+        .carousel-dots button {
+            width:10px;
+            height:10px;
+            border-radius:50%;
+            border:none;
+            background: rgba(255,255,255,0.6);
+        }
+        .carousel-dots button.active { background:#fff; }
+
+        .fade-in {
+            animation: fade 0.8s;
+        }
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
     <div class="navbar">
-
         <div class="logo-area">
-            <img src="{% static 'home/logo.png' %}" alt="logo">
+            <img src="{% static 'home/logo.png' %}">
             <div class="logo-text">
                 <div class="title">BLOOD BANK</div>
                 <div class="sub">MANAGEMENT SYSTEM</div>
@@ -88,177 +198,123 @@
         <a class="login-btn" href="#">LOGIN</a>
     </div>
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Bank Management System</title>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-        }
-
-        /* MAIN CONTAINER */
-        .header-container {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
-            padding: 40px 0;
-        }
-
-        /* LOGO */
-        .logo-img {
-            width: 130px;
-            height: 125px;
-            object-fit: contain;
-        }
-
-        /* CENTER TEXT AREA */
-        .center-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* BLOOD BANK */
-        .bloodbank-text {
-            width: 356px;
-            font-size: 48px;
-            font-weight: 700;
-            color: #E60000;
-            margin: 0;
-            line-height: 59px;   /* EXACT HEIGHT */
-        }
-
-        .bloodbank-text span {
-            color: black;
-        }
-
-        /* MANAGEMENT SYSTEM */
-        .management-text {
-            width: 345px;
-            font-size: 26px;
-            font-weight: 700;
-            color: black;
-            margin: -5px 0 0 0;
-            line-height: 35px;  /* EXACT HEIGHT */
-        }
-
-        /* ILLUSTRATION */
-        .illustration-img {
-            width: 280px;
-            height: 222px;
-            object-fit: contain;
-        }
-    </style>
-</head>
-
-<body>
-
+    <!-- HEADER -->
     <div class="header-container">
-
-        <!-- LOGO -->
-        <img src="{% static 'home/logo1.png' %}" class="logo-img" alt="Logo">
-
-        <!-- TEXT (CENTER) -->
+        <img src="{% static 'home/logo1.png' %}" class="logo-img">
         <div class="center-text">
             <h1 class="bloodbank-text">BLOOD <span>BANK</span></h1>
             <p class="management-text">MANAGEMENT SYSTEM</p>
         </div>
-
-        <!-- ILLUSTRATION -->
-        <img src="{% static 'home/illustration.png' %}" class="illustration-img" alt="Illustration">
-
+        <img src="{% static 'home/illustration.png' %}" class="illustration-img">
     </div>
 
-</body>
-</html>
+    <!-- OPTIONS -->
+    <div style="text-align:center; margin-top:20px;">
+        <h2>GIVE BLOOD, GIVE PLASMA, SHARE LIFE, SHARE OFTEN</h2>
+    </div>
 
+    <div class="option-container">
+        <a href="/search-blood">
+            <div class="option-box">
+                <img src="{% static 'home/box1.png' %}">
+                <div class="option-title">BLOOD AVAILABILITY<br>SEARCH</div>
+            </div>
+        </a>
 
-</body>
-</html>
-<!-- 4 BOX OPTIONS SECTION -->
-<style>
-.option-container {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
+        <a href="/blood-types">
+            <div class="option-box">
+                <img src="{% static 'home/box2.png' %}">
+                <div class="option-title">BLOOD TYPES AND<br>DETAILS</div>
+            </div>
+        </a>
 
-.option-box {
-    width: 220px;
-    height: 140px;
-    background: #c60000;
-    border-radius: 12px;
-    text-align: center;
-    color: white;
-    padding-top: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        <a href="/donor-search">
+            <div class="option-box">
+                <img src="{% static 'home/box3.png' %}">
+                <div class="option-title">SEARCH FOR<br>BLOOD DONOR</div>
+            </div>
+        </a>
 
-.option-box:hover {
-    background: #ff0000;
-    transform: scale(1.05);
-}
+        <a href="/register-volunteer">
+            <div class="option-box">
+                <img src="{% static 'home/box4.png' %}">
+                <div class="option-title">REGISTER AS A<br>VOLUNTEER</div>
+            </div>
+        </a>
+    </div>
 
-.option-box img {
-    width: 45px;
-    margin-bottom: 10px;
-}
+    <!-- CAROUSEL -->
+    <div class="carousel-wrap">
 
-.option-title {
-    font-size: 14px;
-    font-weight: bold;
-}
-</style>
-
-<div style="text-align:center; margin-top:40px;">
-    <h2>GIVE BLOOD, GIVE PLASMA, SHARE LIFE, SHARE OFTEN</h2>
-</div>
-
-<div class="option-container">
-
-    <!-- 1: BLOOD AVAILABILITY SEARCH -->
-    <a href="/search-blood">
-        <div class="option-box">
-            <img src="/static/home/box1.png" alt="Blood Availability" width="98" height="53">
-            <div class="option-title">BLOOD AVAILABILITY<br>SEARCH</div>
+        <div class="carousel-slide">
+            <img src="{% static 'home/c1.png' %}" style="width:718px; height:226px;">
         </div>
-    </a>
 
-    <!-- 2: BLOOD TYPES AND DETAILS -->
-    <a href="/blood-types">
-        <div class="option-box">
-            <img src="/static/home/box2.png" alt="Blood Types"width="98" height="53">
-            <div class="option-title">BLOOD TYPES AND<br>DETAILS</div>
+        <div class="carousel-slide">
+            <img src="{% static 'home/c2.png' %}" style="width:459px; height:226px;">
         </div>
-    </a>
 
-    <!-- 3: SEARCH FOR BLOOD DONOR -->
-    <a href="/donor-search">
-        <div class="option-box">
-            <img src="/static/home/box3.png" alt="Search Donor"width="98" height="53">
-            <div class="option-title">SEARCH FOR<br>BLOOD DONOR</div>
-        </div>
-    </a>
+        <button class="carousel-btn prev-btn">‹</button>
+        <button class="carousel-btn next-btn">›</button>
 
-    <!-- 4: REGISTER AS VOLUNTEER -->
-    <a href="/register-volunteer">
-        <div class="option-box">
-            <img src="/static/home/box4.png" alt="Volunteer"width="98" height="53">
-            <div class="option-title">REGISTER AS A<br>VOLUNTEER</div>
-        </div>
-    </a>
+        <div class="carousel-dots"></div>
+    </div>
+
+    <!-- CAROUSEL SCRIPT -->
+    <script>
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+      if (!slides.length) return;
+
+      let idx = 0;
+      let timer = null;
+      const autoplayDelay = 2500;
+
+      const dotsContainer = document.querySelector('.carousel-dots');
+      slides.forEach((s, i) => {
+        const btn = document.createElement('button');
+        btn.addEventListener('click', () => { showSlide(i); resetTimer(); });
+        dotsContainer.appendChild(btn);
+      });
+
+      const dots = Array.from(dotsContainer.querySelectorAll('button'));
+
+      function showSlide(i) {
+        slides.forEach(s => { s.style.display = 'none'; s.classList.remove('fade-in'); });
+        dots.forEach(d => d.classList.remove('active'));
+
+        idx = (i + slides.length) % slides.length;
+        const cur = slides[idx];
+        cur.style.display = 'block';
+        void cur.offsetWidth;
+        cur.classList.add('fade-in');
+
+        dots[idx].classList.add('active');
+      }
+
+      document.querySelector('.prev-btn')
+              .addEventListener('click', () => { showSlide(idx-1); resetTimer(); });
+
+      document.querySelector('.next-btn')
+              .addEventListener('click', () => { showSlide(idx+1); resetTimer(); });
+
+      function startTimer() {
+        timer = setInterval(() => { showSlide(idx+1); }, autoplayDelay);
+      }
+
+      function resetTimer() {
+        if (timer) clearInterval(timer);
+        startTimer();
+      }
+
+      const wrap = document.querySelector('.carousel-wrap');
+      wrap.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
+      wrap.addEventListener('mouseleave', () => { resetTimer(); });
+
+      showSlide(0);
+      startTimer();
+    })();
+    </script>
 
 </body>
 </html>
