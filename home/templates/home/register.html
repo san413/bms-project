@@ -1,174 +1,121 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register as Donor</title>
+    <title>Register - Blood Bank</title>
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-
-            background-image: url("/mnt/data/a1f0258d-5cc9-4868-ac6f-e8c749d72644.png");
+            background-image: url("{% static 'home/bg_register.png' %}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
         }
 
-        /* Header */
+        /* TOP HEADER */
         .top-header {
             position: absolute;
-            top: 15px;
+            top: 10px;
             left: 30px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
-        .top-header img {
+        .logo {
             width: 80px;
         }
 
-        .system-title {
-            font-size: 26px;
+        .header-text {
+            font-size: 24px;
             font-weight: bold;
         }
 
-        .right-title {
+        .register-right {
             position: absolute;
-            top: 25px;
-            right: 40px;
-            font-size: 22px;
+            top: 20px;
+            right: 30px;
+            font-size: 20px;
             font-weight: bold;
         }
 
-        /* Main card */
-        .form-card {
+        /* FORM CARD */
+        .register-card {
             width: 450px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
+            background: white;
             border-radius: 20px;
-            box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
-        .form-card input,
-        .form-card textarea,
-        .form-card select {
+        .register-card input,
+        .register-card textarea {
             width: 100%;
             padding: 12px;
-            margin: 10px 0;
-            background: #FF4D4D;
-            border: none;
+            margin: 12px 0;
             border-radius: 8px;
+            border: none;
+            background: #ff0000;
             color: white;
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .small-input {
-            width: 48%;
+        textarea {
+            height: 120px;
         }
 
         input::placeholder,
-        textarea::placeholder,
-        select option {
+        textarea::placeholder {
             color: white;
         }
 
-        select {
-            color: white;
-        }
-
-        /* Gender */
-        .gender-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin: 10px 0;
-        }
-
-        .gender-box label {
-            color: black;
-            font-weight: bold;
-        }
-
-        /* Submit Button */
         .btn-submit {
             width: 200px;
             padding: 12px;
             background: red;
-            border: none;
             color: white;
-            font-size: 16px;
+            border: none;
             border-radius: 25px;
             cursor: pointer;
-            margin-top: 15px;
+            font-size: 16px;
+            margin-top: 10px;
         }
-
-        .btn-submit:hover {
-            background: #cc0000;
-        }
-
     </style>
+
 </head>
 
 <body>
 
     <!-- HEADER -->
     <div class="top-header">
-        <img src="{% static 'home/logo1.png' %}">
-        <div class="system-title">BLOOD BANK MANAGEMENT SYSTEM</div>
+        <img src="{% static 'home/logo1.png' %}" class="logo">
+        <div class="header-text">BLOOD BANK MANAGEMENT SYSTEM</div>
     </div>
 
-    <div class="right-title">Register As Donor</div>
+    <div class="register-right">Register</div>
 
-    <!-- FORM CARD -->
-    <div class="form-card">
+    <!-- REGISTER CARD -->
+    <div class="register-card">
+        <form method="POST">
+            {% csrf_token %}
 
-        <input type="text" placeholder="Donor Name">
+            <input type="text" name="username" placeholder="Email/User Name">
+            <input type="text" name="phone" placeholder="Phone Number">
+            <input type="password" name="password" placeholder="Password">
+            <textarea name="address" placeholder="Address"></textarea>
 
-        <div class="gender-box">
-            <label>Gender:</label>
-            <label><input type="radio" name="gender"> Male</label>
-            <label><input type="radio" name="gender"> Female</label>
-        </div>
-
-        <div class="form-row">
-            <input type="number" class="small-input" placeholder="Age">
-            <input type="date" class="small-input" placeholder="DOB">
-        </div>
-
-        <input type="text" placeholder="Mobile Number">
-
-        <select>
-            <option value="">Blood Group</option>
-            <option>A+</option>
-            <option>A-</option>
-            <option>B+</option>
-            <option>B-</option>
-            <option>AB+</option>
-            <option>AB-</option>
-            <option>O+</option>
-            <option>O-</option>
-        </select>
-
-        <textarea placeholder="Address"></textarea>
-
-        <button class="btn-submit">SUBMIT</button>
-
+            <button class="btn-submit" type="submit">SUBMIT</button>
+        </form>
     </div>
 
 </body>

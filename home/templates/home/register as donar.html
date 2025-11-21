@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Donor</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+
+            background-image: url("/mnt/data/a1f0258d-5cc9-4868-ac6f-e8c749d72644.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header */
+        .top-header {
+            position: absolute;
+            top: 15px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .top-header img {
+            width: 80px;
+        }
+
+        .system-title {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .right-title {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Main card */
+        .form-card {
+            width: 450px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+        }
+
+        .form-card input,
+        .form-card textarea,
+        .form-card select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #FF4D4D;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .small-input {
+            width: 48%;
+        }
+
+        input::placeholder,
+        textarea::placeholder,
+        select option {
+            color: white;
+        }
+
+        select {
+            color: white;
+        }
+
+        /* Gender */
+        .gender-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .gender-box label {
+            color: black;
+            font-weight: bold;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            width: 200px;
+            padding: 12px;
+            background: red;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .btn-submit:hover {
+            background: #cc0000;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="top-header">
+        <img src="{% static 'home/logo1.png' %}">
+        <div class="system-title">BLOOD BANK MANAGEMENT SYSTEM</div>
+    </div>
+
+    <div class="right-title">Register As Donor</div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+
+        <input type="text" placeholder="Donor Name">
+
+        <div class="gender-box">
+            <label>Gender:</label>
+            <label><input type="radio" name="gender"> Male</label>
+            <label><input type="radio" name="gender"> Female</label>
+        </div>
+
+        <div class="form-row">
+            <input type="number" class="small-input" placeholder="Age">
+            <input type="date" class="small-input" placeholder="DOB">
+        </div>
+
+        <input type="text" placeholder="Mobile Number">
+
+        <select>
+            <option value="">Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+        <textarea placeholder="Address"></textarea>
+
+        <button class="btn-submit">SUBMIT</button>
+
+    </div>
+
+</body>
+</html>
