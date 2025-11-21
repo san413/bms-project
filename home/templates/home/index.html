@@ -283,6 +283,64 @@
             text-align: left;
             /* correct */
         }
+
+        .stay-section {
+            margin-top: 40px;
+            width: 100%;
+            display: flex;
+            background: red;
+            padding: 30px 20px;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .stay-left {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+        }
+
+        .stay-left input {
+            width: 140px;
+            padding: 6px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .submit-btn {
+            width: 80px;
+            padding: 4px 10px;
+            font-size: 11px;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            font-weight: bold;
+            border: none;
+        }
+
+        .stay-center {
+            display: flex;
+            gap: 30px;
+        }
+
+        .big-btn {
+            display: inline-block;
+            background: #fff;
+            padding: 10px 25px;
+            border-radius: 20px;
+            text-align: center;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .stay-right img {
+            width: 360px;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -448,6 +506,34 @@
             </div>
 
         </div>
+    </div>
+    <!-- STAY WITH US SECTION -->
+    <div class="stay-section">
+
+        <!-- LEFT SIDE FORM -->
+        <div class="stay-left">
+            <h3>Stay With Us</h3>
+
+            <label>Email</label>
+            <input type="email" placeholder="Email">
+
+            <label>Phone No</label>
+            <input type="text" placeholder="Phone Number">
+
+            <button class="submit-btn">SUBMIT</button>
+        </div>
+
+        <!-- CENTER BUTTONS -->
+        <div class="stay-center">
+            <a href="/register-donor" class="big-btn">Register As a <br> DONOR</a>
+            <a href="/request-blood" class="big-btn">Request Blood</a>
+        </div>
+
+        <!-- RIGHT SIDE IMAGE -->
+        <div class="stay-right">
+            <img src="/static/home/stay.png" alt="Blood Image">
+        </div>
+
     </div>
 
 </body>
