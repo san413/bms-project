@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 40px;
+            background: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-area img {
+            height: 40px;
+        }
+
+        .logo-text .title {
+            font-size: 18px;
+            font-weight: 900;
+            color: red;
+        }
+
+        .logo-text .sub {
+            font-size: 10px;
+            color: black;
+        }
+
+        .menu {
+            display: flex;
+            gap: 35px;
+        }
+
+        .menu a {
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .login-btn {
+            background: red;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        /* MAIN BOX */
+        .main-box {
+            background: white;
+            width: 95%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .title {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: red;
+        }
+
+        .filter-box {
+            background: red;
+            padding: 20px;
+            width: 95%;
+            margin: auto;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        select {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            margin: 10px;
+            width: 150px;
+        }
+
+        .search-btn {
+            background: white;
+            color: red;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* TABLE */
+        table {
+            width: 98%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th,
+        td {
+            border: 2px solid red;
+            padding: 10px;
+        }
+
+        th {
+            background: red;
+            color: white;
+        }
+
+        td {
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo-area">
+            <img src="{% static 'home/logo.png' %}">
+            <div class="logo-text">
+                <div class="title">BLOOD BANK</div>
+                <div class="sub">MANAGEMENT SYSTEM</div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <a href="/">HOME</a>
+            <a href="/request/">REQUEST BLOOD</a>
+            <a href="/donate/">DONATE BLOOD</a>
+            <a href="/about/">ABOUT US</a>
+        </div>
+
+        <a class="login-btn" href="#">LOGIN</a>
+    </div>
+
+    <!-- FILTER BOX -->
+    <div class="main-box">
+        <div class="title">Blood Stock Availability</div>
+
+        <div class="filter-box">
+            <select>
+                <option>Select State</option>
+            </select>
+
+            <select>
+                <option>Select District</option>
+            </select>
+
+            <select>
+                <option>Select Blood Group</option>
+            </select>
+
+            <br><br>
+            <button class="search-btn">SEARCH</button>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <table>
+        <tr>
+            <th>S.NO</th>
+            <th>BLOOD BANK</th>
+            <th>AVAILABILITY</th>
+            <th>LAST UPDATED</th>
+            <th>CONTACT</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Blood Bank/Donor Place</td>
+            <td>Private/Donor Details</td>
+            <td>Date</td>
+            <td>Number</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Blood Bank/Donor Place</td>
+            <td>Private/Donor Details</td>
+            <td>Date</td>
+            <td>Number</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
