@@ -116,28 +116,28 @@
             }
 
             /* BACKGROUND IMAGE SECTIONS */
-            .bg1 {
-                background-image: url("{% static 'home/bg1.png' %}");
+            .bg1,
+            .bg2,
+            .bg3 {
                 background-size: cover;
                 background-position: center;
-                padding: 50px 0;
-                border-radius: 100px;
+                padding: 60px 0;
+                border-radius: 400px;
+                overflow: hidden;
+                background-clip: padding-box;
+            }
+
+            /* Individual backgrounds */
+            .bg1 {
+                background-image: url("{% static 'home/bg1.png' %}");
             }
 
             .bg2 {
                 background-image: url("{% static 'home/bg2.png' %}");
-                background-size: cover;
-                background-position: 70% center;
-                padding: 50px 0;
-                border-radius: 100px;
             }
 
             .bg3 {
                 background-image: url("{% static 'home/bg3.png' %}");
-                background-size: cover;
-                background-position: center;
-                padding: 50px 0;
-                border-radius: 100px;
             }
         </style>
     </head>
