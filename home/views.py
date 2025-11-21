@@ -11,3 +11,7 @@ def donate(request):
 
 def about(request):
     return render(request, 'home/about.html')
+
+def login_page(request):
+    return render(request, 'home/login.html')
+
