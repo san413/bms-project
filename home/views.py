@@ -15,3 +15,7 @@ def about(request):
 def login_page(request):
     return render(request, 'home/login.html')
 
+def register_page(request):
+    return render(request, 'home/register.html')
+
+
