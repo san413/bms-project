@@ -18,4 +18,8 @@ def login_page(request):
 def register_page(request):
     return render(request, 'home/register.html')
 
+def register_donor(request):
+    return render(request, 'home/register_donor.html')
+
+
 
