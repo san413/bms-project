@@ -361,11 +361,18 @@
             <a href="/request/">REQUEST BLOOD</a>
             <a href="/donate/">DONATE BLOOD</a>
             <a href="/about/">ABOUT US</a>
-            <a href="{% url 'login' %}">LOGIN</a>
-
         </div>
 
-        <a class="login-btn" href="#">LOGIN</a>
+        <!-- Right Side User Icon -->
+        {% if user.is_authenticated %}
+        <a class="login-btn" href="/profile/">
+            <img src="{% static 'home/user-icon.png' %}" width="35">
+        </a>
+        {% else %}
+        <a class="login-btn" href="{% url 'login' %}">
+            <img src="{% static 'home/user-icon.png' %}" width="35">
+        </a>
+        {% endif %}
     </div>
 
     <!-- HEADER -->

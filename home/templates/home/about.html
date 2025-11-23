@@ -67,67 +67,67 @@
             text-decoration: none;
         }
 
-            /* SECTION BOX */
-            .section-box {
-                background: #c40000;
-                color: white;
-                padding: 20px;
-                margin: 30px auto;
-                width: 80%;
-                border-radius: 15px;
-                font-size: 15px;
-                text-align: center;
-                /* Center heading / paragraph */
-            }
+        /* SECTION BOX */
+        .section-box {
+            background: #c40000;
+            color: white;
+            padding: 20px;
+            margin: 30px auto;
+            width: 80%;
+            border-radius: 15px;
+            font-size: 15px;
+            text-align: center;
+            /* Center heading / paragraph */
+        }
 
-            /* TITLE CENTER */
-            .section-title {
-                font-weight: bold;
-                margin-bottom: 10px;
-                font-size: 30px;
-                text-align: center;
-                /* Only title centered */
-            }
+        /* TITLE CENTER */
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 30px;
+            text-align: center;
+            /* Only title centered */
+        }
 
-            /* LIST LEFT ALIGN */
-            .section-box ul {
-                text-align: left;
-                display: inline-block;
-                /* Keeps list width balanced */
-                margin: auto;
-                /* Ensures center positioning */
-            }
+        /* LIST LEFT ALIGN */
+        .section-box ul {
+            text-align: left;
+            display: inline-block;
+            /* Keeps list width balanced */
+            margin: auto;
+            /* Ensures center positioning */
+        }
 
-            .section-box li {
-                margin-bottom: 10px;
-            }
+        .section-box li {
+            margin-bottom: 10px;
+        }
 
-            /* BACKGROUND IMAGE SECTIONS */
-            .bg1,
-            .bg2,
-            .bg3 {
-                background-size: cover;
-                background-position: center;
-                padding: 60px 0;
-                border-radius: 400px;
-                overflow: hidden;
-                background-clip: padding-box;
-            }
+        /* BACKGROUND IMAGE SECTIONS */
+        .bg1,
+        .bg2,
+        .bg3 {
+            background-size: cover;
+            background-position: center;
+            padding: 60px 0;
+            border-radius: 400px;
+            overflow: hidden;
+            background-clip: padding-box;
+        }
 
-            /* Individual backgrounds */
-            .bg1 {
-                background-image: url("{% static 'home/bg1.png' %}");
-            }
+        /* Individual backgrounds */
+        .bg1 {
+            background-image: url("{% static 'home/bg1.png' %}");
+        }
 
-            .bg2 {
-                background-image: url("{% static 'home/bg2.png' %}");
-            }
+        .bg2 {
+            background-image: url("{% static 'home/bg2.png' %}");
+        }
 
-            .bg3 {
-                background-image: url("{% static 'home/bg3.png' %}");
-            }
-        </style>
-    </head>
+        .bg3 {
+            background-image: url("{% static 'home/bg3.png' %}");
+        }
+    </style>
+</head>
 
 <body>
 
@@ -141,17 +141,23 @@
             </div>
         </div>
 
-<div class="menu">
-    <a href="/">HOME</a>
-    <a href="/request/">REQUEST BLOOD</a>
-    <a href="/donate/">DONATE BLOOD</a>
-    <a href="/about/">ABOUT US</a>
-</div>
+        <div class="menu">
+            <a href="/">HOME</a>
+            <a href="/request/">REQUEST BLOOD</a>
+            <a href="/donate/">DONATE BLOOD</a>
+            <a href="/about/">ABOUT US</a>
+        </div>
 
-
-        <a class="login-btn" href="#">LOGIN</a>
+        {% if user.is_authenticated %}
+        <a class="login-btn" href="/profile/">
+            <img src="{% static 'home/user-icon.png' %}" width="35">
+        </a>
+        {% else %}
+        <a class="login-btn" href="{% url 'login' %}">
+            <img src="{% static 'home/user-icon.png' %}" width="35">
+        </a>
+        {% endif %}
     </div>
-
     <!-- Section 1 -->
     <div class="section-box bg1">
         <div class="section-title">Benefits of Donating Blood</div>

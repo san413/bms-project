@@ -65,6 +65,7 @@
             font-weight: bold;
             text-decoration: none;
         }
+
         /* MAIN BOX */
         .main-box {
             background: white;
@@ -136,7 +137,6 @@
 
 <body>
 
-    <!-- NAVBAR -->
     <div class="navbar">
         <div class="logo-area">
             <img src="{% static 'home/logo.png' %}">
@@ -153,9 +153,16 @@
             <a href="/about/">ABOUT US</a>
         </div>
 
-        <a class="login-btn" href="#">LOGIN</a>
+        {% if user.is_authenticated %}
+        <a class="login-btn" href="/profile/">
+            <img src="{% static 'home/user-icon.png' %}" width="35">
+        </a>
+        {% else %}
+        <a class="login-btn" href="{% url 'login' %}">
+            <img src="{% static 'home/user-icon.png' %}" width="35">
+        </a>
+        {% endif %}
     </div>
-
     <!-- FILTER BOX -->
     <div class="main-box">
         <div class="title">Blood Stock Availability</div>
