@@ -1,2 +1,66 @@
-<h1>Blood Types & Details</h1>
-<p>Show blood group details here later.</p>
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Types & Details</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff4b4b, #ff7777);
+            color: #fff;
+        }
+
+        .container {
+            width: 70%;
+            background: #ffffff;
+            color: #000;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #c40000;
+            margin-bottom: 20px;
+        }
+
+        .type-box {
+            margin: 20px 0;
+            padding: 20px;
+            background: #ffeaea;
+            border-left: 6px solid #c40000;
+            border-radius: 10px;
+        }
+
+        .type-box h2 {
+            margin: 0;
+            color: #900000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>BLOOD TYPES & DETAILS</h1>
+
+        <div class="type-box">
+            <h2>A Positive (A+)</h2>
+            <p>Compatible with A+ and AB+ patients.</p>
+        </div>
+
+        <div class="type-box">
+            <h2>O Negative (O-)</h2>
+            <p>Universal donor, can donate to all blood groups.</p>
+        </div>
+
+        <div class="type-box">
+            <h2>AB Positive (AB+)</h2>
+            <p>Universal receiver, can receive all blood types.</p>
+        </div>
+
+    </div>
+</body>
+</html>

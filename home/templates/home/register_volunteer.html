@@ -1,2 +1,64 @@
-<h1>Register as a Volunteer</h1>
-<p>Registration form will come here later.</p>
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register as Volunteer</title>
+    <style>
+        body {
+            background: #d9e7ff;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .container {
+            background: white;
+            width: 50%;
+            padding: 40px;
+            margin: 50px auto;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #003cff;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #003cff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>REGISTER AS VOLUNTEER</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Full Name">
+        <input type="number" name="age" placeholder="Age">
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="phone" placeholder="Phone">
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+</body>
+</html>

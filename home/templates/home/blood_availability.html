@@ -1,2 +1,74 @@
-<h1>Blood Availability Search</h1>
-<p>This is a simple page. You can design later.</p>
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Availability Search</title>
+    <style>
+        body {
+            background: #fff3f3;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .container {
+            width: 65%;
+            background: white;
+            padding: 40px;
+            margin: 60px auto;
+            border-radius: 12px;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #c30000;
+        }
+
+        .form-group {
+            margin-top: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #bbb;
+        }
+
+        button {
+            margin-top: 30px;
+            width: 100%;
+            padding: 14px;
+            background: #c30000;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>BLOOD AVAILABILITY SEARCH</h1>
+
+    <form method="GET">
+
+        <div class="form-group">
+            <label>Select Blood Type</label>
+            <select>
+                <option>O+</option>
+                <option>O-</option>
+                <option>A+</option>
+                <option>B+</option>
+            </select>
+        </div>
+
+        <button>Check Availability</button>
+    </form>
+
+</div>
+
+</body>
+</html>
