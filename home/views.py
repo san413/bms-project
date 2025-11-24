@@ -37,4 +37,17 @@ def register_donor(request):
 def profile(request):
     return render(request, 'home/profile.html')
 
+from django.shortcuts import render
+
+def blood_availability(request):
+    return render(request, 'home/blood_availability.html')
+
+def blood_types(request):
+    return render(request, 'home/blood_types.html')
+
+def search_donor(request):
+    return render(request, 'home/search_donor.html')
+
+def register_volunteer(request):
+    return render(request, 'home/register_volunteer.html')
 

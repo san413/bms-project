@@ -391,33 +391,35 @@
     </div>
 
     <div class="option-container">
-        <a href="/search-blood">
+
+        <a href="{% url 'blood_availability' %}">
             <div class="option-box">
                 <img src="{% static 'home/box1.png' %}">
                 <div class="option-title">BLOOD AVAILABILITY<br>SEARCH</div>
             </div>
         </a>
 
-        <a href="/blood-types">
+        <a href="{% url 'blood_types' %}">
             <div class="option-box">
                 <img src="{% static 'home/box2.png' %}">
                 <div class="option-title">BLOOD TYPES AND<br>DETAILS</div>
             </div>
         </a>
 
-        <a href="/donor-search">
+        <a href="{% url 'search_donor' %}">
             <div class="option-box">
                 <img src="{% static 'home/box3.png' %}">
                 <div class="option-title">SEARCH FOR<br>BLOOD DONOR</div>
             </div>
         </a>
 
-        <a href="/register-volunteer">
+        <a href="{% url 'register_volunteer' %}">
             <div class="option-box">
                 <img src="{% static 'home/box4.png' %}">
                 <div class="option-title">REGISTER AS A<br>VOLUNTEER</div>
             </div>
         </a>
+
     </div>
 
     <!-- CAROUSEL -->
@@ -535,7 +537,7 @@
         <!-- CENTER BUTTONS -->
         <div class="stay-center">
             <a href="/register-donor" class="big-btn">Register As a <br> DONOR</a>
-             <a href="{% url 'request' %}" class="big-btn">Request Blood</a>
+            <a href="{% url 'request' %}" class="big-btn">Request Blood</a>
         </div>
 
         <!-- RIGHT SIDE IMAGE -->

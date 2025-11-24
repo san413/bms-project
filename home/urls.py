@@ -10,8 +10,8 @@ urlpatterns = [
     path('register/', views.register_page, name='register'),
     path('register-donor/', views.register_donor, name='register_donor'),
     path('profile/', views.profile, name='profile'),
-
-
-
-
+    path('availability/', views.blood_availability, name='blood_availability'),
+    path('types/', views.blood_types, name='blood_types'),
+    path('search-donor/', views.search_donor, name='search_donor'),
+    path('volunteer/', views.register_volunteer, name='register_volunteer'),
 ]
