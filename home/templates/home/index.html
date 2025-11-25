@@ -525,14 +525,19 @@
         <div class="stay-left">
             <h3>Stay With Us</h3>
 
-            <label>Email</label>
-            <input type="email" placeholder="Email">
+            <form action="/stay-contact/" method="POST">
+                {% csrf_token %}
 
-            <label>Phone No</label>
-            <input type="text" placeholder="Phone Number">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Email" required>
 
-            <button class="submit-btn">SUBMIT</button>
+                <label>Phone No</label>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+
+                <button class="submit-btn" type="submit">SUBMIT</button>
+            </form>
         </div>
+
 
         <!-- CENTER BUTTONS -->
         <div class="stay-center">
