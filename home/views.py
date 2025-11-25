@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from .models import Donor
 
 def index(request):
     return render(request, 'home/index.html')
@@ -51,3 +52,18 @@ def search_donor(request):
 def register_volunteer(request):
     return render(request, 'home/register_volunteer.html')
 
+def register_donor(request):
+    if request.method == "POST":
+        Donor.objects.create(
+            name=request.POST.get("name"),
+            gender=request.POST.get("gender"),
+            age=request.POST.get("age"),
+            dob=request.POST.get("dob"),
+            mobile=request.POST.get("mobile"),
+            blood_group=request.POST.get("blood_group"),
+            address=request.POST.get("address"),
+        )
+
+        return render(request, "home/register_donor.html", {"success": True})
+
+    return render(request, "home/register_donor.html")

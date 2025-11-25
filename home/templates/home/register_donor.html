@@ -138,38 +138,40 @@
 
     <!-- FORM CARD -->
     <div class="form-card">
+        <form method="POST" action="/register-donor/">
+            {% csrf_token %}
 
-        <input type="text" placeholder="Donor Name">
+            <input type="text" name="name" placeholder="Donor Name" required>
 
-        <div class="gender-box">
-            <label>Gender:</label>
-            <label><input type="radio" name="gender"> Male</label>
-            <label><input type="radio" name="gender"> Female</label>
-        </div>
+            <div class="gender-box">
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" value="Female" required> Female</label>
+            </div>
 
-        <div class="form-row">
-            <input type="number" class="small-input" placeholder="Age">
-            <input type="date" class="small-input" placeholder="DOB">
-        </div>
+            <div class="form-row">
+                <input type="number" name="age" class="small-input" placeholder="Age" required>
+                <input type="date" name="dob" class="small-input" required>
+            </div>
 
-        <input type="text" placeholder="Mobile Number">
+            <input type="text" name="mobile" placeholder="Mobile Number" required>
 
-        <select>
-            <option value="">Blood Group</option>
-            <option>A+</option>
-            <option>A-</option>
-            <option>B+</option>
-            <option>B-</option>
-            <option>AB+</option>
-            <option>AB-</option>
-            <option>O+</option>
-            <option>O-</option>
-        </select>
+            <select name="blood_group" required>
+                <option value="">Blood Group</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+            </select>
 
-        <textarea placeholder="Address"></textarea>
+            <textarea name="address" placeholder="Address" required></textarea>
 
-        <button class="btn-submit">SUBMIT</button>
-
+            <button type="submit" class="btn-submit">SUBMIT</button>
+        </form>
     </div>
 
 </body>
