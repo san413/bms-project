@@ -148,83 +148,74 @@
 
         /* CAROUSEL */
         .carousel-wrap {
-            max-width: 1100px;
-            margin: 25px auto;
+            width: 100%;
+            max-width: 800px;
+            /* You can change this */
+            margin: auto;
             position: relative;
             overflow: hidden;
-            border: 2px solid #0092ff;
-            border-radius: 4px;
+            border-radius: 8px;
         }
 
-        .carousel-slide {
-            display: none;
+        .carousel-slide img.carousel-img {
             width: 100%;
-        }
-
-        .option-box img {
-            width: 98px;
-            /* fixed width */
-            height: 53px;
-            /* fixed height */
-            object-fit: contain;
-            /* auto-fit without cutting */
+            /* Make image fit the box horizontally */
+            height: 250px;
+            /* You can change height */
+            object-fit: cover;
+            /* Crop nicely instead of stretching */
             display: block;
         }
 
+        /* Buttons */
         .carousel-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.45);
-            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
             border: none;
-            padding: 8px 12px;
-            font-size: 24px;
+            font-size: 25px;
+            padding: 8px 14px;
             cursor: pointer;
+            border-radius: 50%;
         }
 
         .prev-btn {
-            left: 12px;
+            left: 10px;
         }
 
         .next-btn {
-            right: 12px;
+            right: 10px;
         }
 
-        .carousel-dots {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-        }
-
+        /* Dots */
         .carousel-dots button {
             width: 10px;
             height: 10px;
             border-radius: 50%;
+            margin: 5px;
             border: none;
-            background: rgba(255, 255, 255, 0.6);
+            background: #bbb;
+            cursor: pointer;
         }
 
-        .carousel-dots button.active {
-            background: #fff;
+        .carousel-dots .active {
+            background: #333;
         }
 
+        /* Fade Animation */
         .fade-in {
-            animation: fade 0.8s;
+            animation: fade 0.6s ease-in-out;
         }
 
         @keyframes fade {
             from {
                 opacity: 0;
-                transform: translateY(6px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
 
@@ -426,11 +417,11 @@
     <div class="carousel-wrap">
 
         <div class="carousel-slide">
-            <img src="{% static 'home/c1.png' %}" style="width:718px; height:226px;">
+            <img src="{% static 'home/c1.png' %}" class="carousel-img">
         </div>
 
         <div class="carousel-slide">
-            <img src="{% static 'home/c2.png' %}" style="width:459px; height:226px;">
+            <img src="{% static 'home/c2.png' %}" class="carousel-img">
         </div>
 
         <button class="carousel-btn prev-btn">‹</button>
