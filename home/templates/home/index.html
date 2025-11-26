@@ -15,6 +15,12 @@
         }
 
         /* NAVBAR */
+        .menu a.active {
+            border-bottom: 3px solid red;
+            padding-bottom: 3px;
+            color: red;
+        }
+
         .navbar {
             display: flex;
             align-items: center;
@@ -348,13 +354,12 @@
         </div>
 
         <div class="menu">
-            <a href="/">HOME</a>
-            <a href="/request/">REQUEST BLOOD</a>
-            <a href="/donate/">DONATE BLOOD</a>
-            <a href="/about/">ABOUT US</a>
+            <a href="/" class="{% if request.path == '/' %}active{% endif %}">HOME</a>
+            <a href="/request/" class="{% if request.path == '/request/' %}active{% endif %}">REQUEST BLOOD</a>
+            <a href="/donate/" class="{% if request.path == '/donate/' %}active{% endif %}">DONATE BLOOD</a>
+            <a href="/about/" class="{% if request.path == '/about/' %}active{% endif %}">ABOUT US</a>
         </div>
 
-        <!-- Right Side User Icon -->
         {% if user.is_authenticated %}
         <a class="login-btn" href="/profile/">
             <img src="{% static 'home/user-icon.png' %}" width="35">
@@ -365,6 +370,7 @@
         </a>
         {% endif %}
     </div>
+
 
     <!-- HEADER -->
     <div class="header-container">
