@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .models import Donor, StayContact
+from .models import Donor, StayContact, Volunteer
 
 
 def index(request):
@@ -84,3 +84,15 @@ def stay_contact(request):
         )
         return render(request, "home/stay_success.html")
     return redirect("index")  # or homepage
+
+def register_volunteer(request):
+    if request.method == "POST":
+        Volunteer.objects.create(
+            name=request.POST.get("name"),
+            age=request.POST.get("age"),
+            city=request.POST.get("city"),
+            phone=request.POST.get("phone"),
+        )
+        return render(request, "home/volunteer_success.html")
+
+    return render(request, "home/register_volunteer.html")    

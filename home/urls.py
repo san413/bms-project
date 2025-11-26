@@ -15,5 +15,7 @@ urlpatterns = [
     path('search-donor/', views.search_donor, name='search_donor'),
     path('volunteer/', views.register_volunteer, name='register_volunteer'),
     path('stay-contact/', views.stay_contact, name='stay_contact'),
+    path("register-volunteer/", views.register_volunteer, name="register_volunteer"),
+
 
 ]
